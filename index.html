@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pdf</title>
+<meta name="description" content="A SolidOS pane that shows PDF documents in the browser’s own viewer, with the file name, size and pages, and Open and Download buttons. One file, loaded by link.">
+<link rel="canonical" href="https://solid-panes.github.io/pdf/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="solid-panes">
+<meta property="og:title" content="PDF pane · documents in SolidOS">
+<meta property="og:description" content="A SolidOS pane that shows PDF documents in the browser’s own viewer, with the file name, size and pages, and Open and Download buttons. One file, loaded by link.">
+<meta property="og:url" content="https://solid-panes.github.io/pdf/">
+<meta property="og:image" content="https://solid-panes.github.io/pdf/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The pdf pane showing a three-page sample document in the browser’s PDF viewer, with its name, size and page count above">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://solid-panes.github.io/pdf/og.png">
+<style>
+  body { margin: 0; background: #f8f9fb; color: #1d1d1f; font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif }
+  main { max-width: 680px; margin: 0 auto; padding: 64px max(20px, env(safe-area-inset-left, 0px)) 96px }
+  h1 { font-size: 40px; letter-spacing: -.02em; margin: 0 0 8px }
+  h2 { font-size: 21px; margin: 30px 0 4px }
+  p { margin: 0 0 18px; color: #3a3a3c }
+  ul { list-style: none; padding: 0; margin: 0 0 18px }
+  li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 12px 0; border-bottom: 1px solid #e6e8ee }
+  li b { flex: 1 1 220px; font-weight: 600 }
+  .go { display: inline-block; background: #c4372d; color: #fff; font-weight: 700; text-decoration: none; padding: 8px 18px; border-radius: 999px; font-size: 15px }
+  .go.alt { background: #fff; color: #9c2a21; box-shadow: inset 0 0 0 1.5px #eab0a9 }
+  code { background: #eef0f4; padding: 2px 6px; border-radius: 6px; font-size: 15px; overflow-wrap: anywhere }
+  a { color: #9c2a21 }
+  @media (max-width: 480px) { li b { flex-basis: 100% } }
+</style>
+</head>
+<body>
+<main>
+  <h1>pdf</h1>
+  <p>A pane for the SolidOS data browser that shows PDF documents in the browser’s own viewer. A title bar gives the file name, size and number of pages, with Open and Download buttons. It is one module, loaded by link.</p>
+  <h2>Try it</h2>
+  <ul>
+    <li><b>Solid panes (3 pages)</b>
+      <a class="go" href="https://jss.live/pane-runner/?pane=https%3A%2F%2Fsolid-panes.github.io%2Fpdf%2Fpdf-pane.js&amp;uri=https%3A%2F%2Fsolid-panes.github.io%2Fpdf%2Fsamples%2Fsolid-panes.pdf">Pane runner</a>
+      <a class="go alt" href="https://solidos.org/docs/browser/?pane=https%3A%2F%2Fsolid-panes.github.io%2Fpdf%2Fpdf-pane.js&amp;uri=https%3A%2F%2Fsolid-panes.github.io%2Fpdf%2Fsamples%2Fsolid-panes.pdf">SolidOS</a></li>
+  </ul>
+  <p>The page asks before it runs a pane from a site it has not seen. Allow it, and the document opens.</p>
+  <p>Early days: where the browser has no PDF viewer (most phones), the pane gives the link to open the file instead.</p>
+  <p>The pane: <code>https://solid-panes.github.io/pdf/pdf-pane.js</code></p>
+  <p>Source and details: <a href="https://github.com/solid-panes/pdf">github.com/solid-panes/pdf</a> · MIT</p>
+</main>
+</body>
+</html>

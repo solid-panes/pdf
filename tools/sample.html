@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- The source of samples/solid-panes.pdf. node tools/sample-pdf.mjs prints this page to PDF. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solid panes: one file, loaded by link</title>
+<style>
+  @font-face { font-family: 'Atkinson'; font-weight: 100 900; src: url('atkinson.woff2') format('woff2') }
+  @page { size: A4; margin: 22mm 20mm }
+  body { font: 12pt/1.5 'Atkinson', system-ui, sans-serif; color: #222 }
+  h1 { font-size: 30pt; line-height: 1.1; margin: 0 0 6pt; color: #9c2a21; letter-spacing: -.01em }
+  h2 { font-size: 16pt; margin: 18pt 0 4pt; color: #2a1d17 }
+  .lead { font-size: 14pt; color: #555; margin: 0 0 18pt }
+  .page { break-after: page }
+  .page:last-child { break-after: auto }
+  code, pre { font-family: ui-monospace, 'DejaVu Sans Mono', monospace; font-size: 10pt }
+  pre { background: #f6f3f1; border-radius: 6pt; padding: 10pt 12pt; white-space: pre-wrap }
+  table { border-collapse: collapse; width: 100%; margin-top: 8pt }
+  th, td { text-align: left; padding: 6pt 8pt; border-bottom: 1px solid #e5e0dc; vertical-align: top }
+  th { color: #6b625d; font-size: 10pt; text-transform: uppercase; letter-spacing: .05em }
+  .foot { margin-top: 28pt; font-size: 9.5pt; color: #888 }
+</style>
+</head>
+<body>
+<section class="page">
+  <h1>Solid panes</h1>
+  <p class="lead">One file, loaded by link. A sample document for the PDF pane.</p>
+  <h2>What a pane is</h2>
+  <p>A pane is a small JavaScript module that draws one kind of resource in the SolidOS data browser. When you open a resource, the browser asks each pane it knows whether it can show it, and draws it with the one that says yes.</p>
+  <p>A pane needs no build step and no release. It is a single file on any web server, and the browser loads it at runtime from its address.</p>
+  <h2>Loading a pane by link</h2>
+  <p>Add the pane's address to the browser's own link with <code>?pane=</code>, and the resource with <code>&amp;uri=</code>. The page asks before it runs a pane from a site it has not seen.</p>
+  <pre>https://solidos.org/docs/browser/?pane=&lt;pane url&gt;&amp;uri=&lt;resource url&gt;</pre>
+  <p class="foot">Page 1 of 3 · written for the pdf pane's samples</p>
+</section>
+<section class="page">
+  <h1>The contract</h1>
+  <p class="lead">Four parts, all optional but one.</p>
+  <table>
+    <tr><th>Part</th><th>What it does</th></tr>
+    <tr><td><code>name</code></td><td>A unique name. A second pane with the same name is ignored.</td></tr>
+    <tr><td><code>icon</code></td><td>A small picture, usually a <code>data:</code> address so the pane stays one file.</td></tr>
+    <tr><td><code>label()</code></td><td>Returns a short tab name if the pane fits the resource, or nothing.</td></tr>
+    <tr><td><code>render()</code></td><td>Returns one element that shows the resource. It may fill it in later.</td></tr>
+  </table>
+  <h2>House rules</h2>
+  <p>Build the page with plain elements and text, never raw markup, because a document can carry hostile text. Keep the styles in the file. Make it work on a phone. A pane that only reads never writes.</p>
+  <p class="foot">Page 2 of 3</p>
+</section>
+<section class="page">
+  <h1>Why it matters</h1>
+  <p class="lead">New views ship when they are ready.</p>
+  <p>Because a pane is loaded by link, a new view for videos, sound, pictures or documents can be tried by anyone, today, on any SolidOS page. When it is good, a server can load it for everyone with one flag, and nothing else has to change.</p>
+  <h2>This document</h2>
+  <p>You are reading it in the PDF pane: the browser's own viewer inside a card with the file's name, size and page count, and buttons to open it in a new tab or download it.</p>
+  <p class="foot">Page 3 of 3 · MIT licence, like the pane</p>
+</section>
+</body>
+</html>
